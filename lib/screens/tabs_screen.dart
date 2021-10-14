@@ -32,7 +32,7 @@ int _selectedPageIndex = 0;
       appBar: AppBar(title: Text(_pages[_selectedPageIndex]["title"]),
       backgroundColor: Theme.of(context).primaryColor,
       ),
-      drawer: mainDrawer(),
+      drawer: MainDrawer(),
       body: _pages[_selectedPageIndex]["page"],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,

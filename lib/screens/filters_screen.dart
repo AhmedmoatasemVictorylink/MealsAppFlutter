@@ -6,6 +6,10 @@ class FiltersScreen extends StatefulWidget {
 
   static const routeName = "/filters";
 
+  final Function saveFilters;
+
+  FiltersScreen(this.saveFilters);
+
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
 }
@@ -29,7 +33,23 @@ class _FiltersScreenState extends State<FiltersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("your filters"),),
+      appBar: AppBar(
+        title: Text("your filters"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              final selectedFilters = {
+                "gluten": _glutenFree,
+                "lactose": _lactoseFree,
+                "vegan": _vegan,
+                "vegetarian": _vegetrian,
+              };
+              widget.saveFilters();
+            },
+             icon: Icon(Icons.save),
+             ),
+        ],
+        ),
       drawer: MainDrawer(),
       body: Column(
         children: [

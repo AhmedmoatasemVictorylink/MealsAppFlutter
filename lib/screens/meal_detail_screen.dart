@@ -78,7 +78,7 @@ class MealDetailsScreen extends StatelessWidget {
                       ),
                     title: Text(selectedMeal.steps[index] as String),
                     ),
-                    Divider()
+                    Divider()  // adding a line between list items
                 ],
               ),
               ),

@@ -1,5 +1,6 @@
 
 
+
 import 'package:flutter/material.dart';
 import 'package:meals_app/dummy_data.dart';
 
@@ -84,7 +85,13 @@ class MealDetailsScreen extends StatelessWidget {
               ),
            ),
         ],),
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.delete),
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
+        ),
     );
   }
 }
